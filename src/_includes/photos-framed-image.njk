@@ -1,10 +1,16 @@
-{% macro framedImage (src, id) %}
-<figure data-component="pauls-framed-image" id="{{ id }}" class="frame">
+{% macro framedImage (src, alt='', caption='', id='', class='') %}
+<figure data-component="pauls-framed-image" class="frame {{ class }}">
   <img
+    id="{{ id }}"
     src="{{ ['/', src] | join() | url }}"
-    alt=""
+    alt="{{ alt }}"
     loading="lazy"
     decoding="async"
   />
+  {%- if caption %}
+  <figcaption>
+    {{ caption | safe}}
+  </figcaption>
+  {% endif -%}
 </figure>
 {% endmacro %}

@@ -1,7 +1,7 @@
 const htmlmin = require("html-minifier");
 
 module.exports = (eleventyConfig) => {
-  eleventyConfig.addPassthroughCopy("src/static/photos/**/*");
+  eleventyConfig.addPassthroughCopy("src/static/photos/**/*.(jpg|jpeg)");
   eleventyConfig.addPassthroughCopy("src/static/css");
   eleventyConfig.addPassthroughCopy("src/static/icon");
   eleventyConfig.addPassthroughCopy("src/favicon.ico");
