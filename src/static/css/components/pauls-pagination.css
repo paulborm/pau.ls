@@ -4,9 +4,16 @@
   list-style: none;
   display: flex;
   gap: 1em;
+  padding-inline: var(--page-spacing);
 }
 
 [data-component="pauls-pagination"] [aria-current="page"] {
   color: white;
   text-decoration: line-through;
+}
+
+@media screen and (min-width: 50rem) {
+  [data-component="pauls-pagination"] :is(ol, ul) {
+    padding-inline: 0;
+  }
 }

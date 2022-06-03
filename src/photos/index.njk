@@ -9,18 +9,18 @@ changeFreq: "weekly"
 
 {% from 'photos-article.njk' import article %}
 
-{% block intro %}
 <section class="page-main-intro">
   <h1>
     Everyday scenes and stories taken with my camera, stored in the album.
   </h1>
 </section>
-{% endblock %}
 
-{% for datetime, photos in pagination.items %}
-  {{ article(datetime, photos) }}
-{% endfor %}
+<section class="page-main-content">
+  {% for datetime, photos in pagination.items %}
+    {{ article(datetime, photos) }}
+  {% endfor %}
 
-{% if pagination.pages | length > 1 %}
-  {% include "pagination.njk" %}
-{% endif %}
+  {% if pagination.pages | length > 1 %}
+    {% include "pagination.njk" %}
+  {% endif %}
+</section>

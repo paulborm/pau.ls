@@ -46,14 +46,7 @@ bodyClass: []
     {% endblock %}
 
     <main class="page-main">
-      {% block intro %}
-      {% endblock %}
-
-     <section class="page-main-content">
-      {% block main %}
-        {{ content | safe }}
-      {% endblock %}
-      </section>
+      {{ content | safe }}
     </main>
 
     {% block footer %}

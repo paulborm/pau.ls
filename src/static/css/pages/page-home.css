@@ -1,0 +1,5 @@
+.page.page--home .page-main-content {
+  display: grid;
+  grid-template-columns: minmax(var(--image-min-size), var(--image-max-size));
+  padding-inline: var(--page-spacing);
+}

@@ -5,20 +5,17 @@
  */
 
 .page {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto auto 1fr auto;
-  grid-template-areas:
-    "header"
-    "aside"
-    "main"
-    "footer";
+  display: flex;
+  flex-direction: column;
   gap: 32px;
   align-content: start;
+  min-height: 100vh;
 }
 
 @media screen and (min-width: 50rem) {
   .page {
+    display: grid;
+    flex-direction: initial;
     grid-template-rows: auto 1fr auto;
     grid-template-columns: 1fr 4fr;
     grid-template-areas:
@@ -40,14 +37,17 @@
 }
 
 .page-main {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 64px;
   grid-area: main;
   padding-bottom: 48px;
+  flex: 1 1 auto;
 }
 
 .page-header,
 .page-footer {
+  flex: 0 0 auto;
   padding-block: 24px;
 }
 
@@ -74,7 +74,8 @@
 }
 
 .page-main-content {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 64px;
 }
 

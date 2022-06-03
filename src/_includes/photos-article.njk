@@ -4,11 +4,12 @@
 {% macro article (date, images) %}
 
 {# START Variables #}
+{% set maxNumberImages = 4 %}
 {% set id = date | replace('-', '') %}
 {% set title = date | replace('-', '/') %}
 {% set framedImagesHTML %}
   {% for image in images %}
-      {{ framedImage(image.url, alt=image.alt, caption=image.caption, id=[id, loop.index] | join('-')) }}
+      {{ framedImage(image.url, alt=image.alt, caption=image.caption, id=image.id) }}
     {% endfor %}
 {% endset %}
 {# END Variables #}
@@ -20,14 +21,12 @@
       <time datetime="{{ date }}">{{ title}}</time>
     </h2>
   </header>
-  <main>
+  <main class="{% if images.length <= maxNumberImages %}grid{% endif %}">
 
-  {% if images.length > 4 %}
+  {% if images.length > maxNumberImages %}
     {{ imageSlider(framedImagesHTML) }}
   {% else %}
-    <div class="grid">
-      {{ framedImagesHTML | safe }}
-    </div>
+    {{ framedImagesHTML | safe }}
   {% endif %}
 
   </main>

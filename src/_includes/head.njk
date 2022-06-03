@@ -38,5 +38,11 @@
   <link rel="stylesheet" href="/static/css/components/pauls-slider.css" />
   <link rel="stylesheet" href="/static/css/components/pauls-pagination.css" />
 
+  {% if page.url === '/' %}
+  <link rel="stylesheet" href="/static/css/pages/page-home.css" />
+  {% endif %}
+
+  <script defer src="/static/web_modules/container-query-polyfill/cqfill.iife.min.js"></script>
+
   {% block head %} {% endblock %}
 </head>

@@ -5,15 +5,11 @@
  */
 
 html {
-  min-height: 100%;
-
   color-scheme: light;
   scroll-padding-block: var(--header-height, 24px);
 }
 
 body {
-  min-height: 100vh;
-
   font-family: "Trebuchet MS", Roboto, Helvetica, Arial, sans-serif;
   color: var(--color-text);
   background-color: var(--color-page-background);
@@ -50,24 +46,9 @@ a[target="_blank"]::after {
   opacity: 0.25;
 }
 
-@media screen and (min-width: 50rem) {
-  :root {
-    --image-gutter: 24px;
-    --page-spacing: 24px;
-    --font-size-h2: 1.75rem;
-  }
-}
-
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
-  }
-
-  :root {
-    --color-text: hwb(47 93% 0%);
-    --color-text-muted: hwb(51 46% 51%);
-    --color-links: hwb(216 37% 0%);
-    --color-page-background: hwb(60 14% 84%);
   }
 
   a[target="_blank"]::after {

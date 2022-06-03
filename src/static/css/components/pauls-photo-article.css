@@ -5,11 +5,15 @@
  */
 
 .article {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 24px;
 }
 
-.article .grid {
+.article main {
+}
+
+.article main.grid {
   display: grid;
   grid-template-columns: repeat(
     auto-fill,
@@ -19,7 +23,7 @@
 }
 
 .article header,
-.article .grid {
+.article main:where(.grid) {
   padding-inline: var(--page-spacing);
 }
 
@@ -38,7 +42,7 @@
   }
 
   .article header,
-  .article .grid {
+  .article main {
     padding: 0;
   }
 }
