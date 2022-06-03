@@ -59,5 +59,14 @@ bodyClass: []
     {% block footer %}
       {% include "footer.njk" %}
     {% endblock %}
+
+    <script>
+      "use strict";
+
+      document.documentElement.style.setProperty(
+        "--header-height",
+        `${document.querySelector('[data-id="page-header"]').getBoundingClientRect().height}px`
+      );
+    </script>
   </body>
 </html>
