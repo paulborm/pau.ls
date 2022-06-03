@@ -39,9 +39,9 @@ const getAllFiles = function (dirPath, root, arrayOfFiles) {
             [".json"].includes(path.extname(file)) &&
             path.basename(file, path.extname(file)) === path.basename(filePath)
           ) {
-            const fileMetadata = require(path.resolve(dirPath, file));
-            metadata.alt = fileMetadata?.alt;
-            metadata.caption = fileMetadata?.caption;
+            const fileMetadata = require(path.resolve(dirPath, file)) || {};
+            metadata.alt = fileMetadata.alt;
+            metadata.caption = fileMetadata.caption;
           }
         });
 
