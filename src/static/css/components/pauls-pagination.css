@@ -1,0 +1,12 @@
+[data-component="pauls-pagination"] :is(ol, ul) {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 1em;
+}
+
+[data-component="pauls-pagination"] [aria-current="page"] {
+  color: white;
+  text-decoration: line-through;
+}

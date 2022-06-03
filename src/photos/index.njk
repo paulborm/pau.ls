@@ -21,4 +21,6 @@ changeFreq: "weekly"
   {{ article(datetime, photos) }}
 {% endfor %}
 
-{% include "pagination.njk" %}
+{% if pagination.pages | length > 1 %}
+  {% include "pagination.njk" %}
+{% endif %}

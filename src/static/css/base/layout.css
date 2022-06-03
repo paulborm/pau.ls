@@ -60,6 +60,7 @@
   display: grid;
   gap: 64px;
   grid-area: main;
+  padding-bottom: 48px;
 }
 
 .page-header,
