@@ -1,0 +1,27 @@
+[data-component="pauls-site-header"] {
+  position: sticky;
+  top: 0;
+  mix-blend-mode: difference; /* Safari does not support `differences` */
+  mix-blend-mode: exclusion;
+  user-select: none;
+  grid-area: header;
+  font-size: var(--font-size-h2);
+  line-height: 1;
+}
+
+[data-component="pauls-site-header"] nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+[data-component="pauls-site-header"] :where(*) {
+  color: white;
+}
+
+[data-component="pauls-site-header"] a.logo:not(:hover) {
+  text-decoration: none;
+}
+
+[data-component="pauls-site-header"] a:not(.logo)[aria-current="page"] {
+  text-decoration: line-through;
+}

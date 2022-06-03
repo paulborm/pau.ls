@@ -39,23 +39,6 @@
   }
 }
 
-.page-header {
-  position: sticky;
-  top: 0;
-  mix-blend-mode: difference; /* Safari does not support `differences` */
-  mix-blend-mode: exclusion;
-  user-select: none;
-  grid-area: header;
-  font-size: var(--font-size-h2);
-  line-height: 1;
-}
-
-.page-header,
-.page-header a {
-  color: white;
-  text-decoration: none;
-}
-
 .page-main {
   display: grid;
   gap: 64px;

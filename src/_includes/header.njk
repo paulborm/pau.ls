@@ -1,1 +1,15 @@
-<header data-id="page-header" class="page-header">Paul Borm</header>
+<header data-component="pauls-site-header" data-id="page-header" class="page-header">
+  <nav>
+    {%- for item in site.nav -%}
+      <a
+        {% if page.url == item.href %}
+        aria-current="page"
+        {% endif %}
+        href="{{ item.href }}"
+        class="{% if item.isHome %}logo{% endif %}"
+      >
+        {{- item.title -}}
+      </a>
+    {%- endfor -%}
+  </nav>
+</header>
