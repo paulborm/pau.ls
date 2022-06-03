@@ -1,0 +1,114 @@
+/*
+ * ====================================
+ *     START Component: Page Layout
+ * ====================================
+ */
+
+.page {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto 1fr auto;
+  grid-template-areas:
+    "header"
+    "aside"
+    "main"
+    "footer";
+  gap: 32px;
+  align-content: start;
+}
+
+@media screen and (min-width: 50rem) {
+  .page {
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 1fr 4fr;
+    grid-template-areas:
+      "header header"
+      "aside main"
+      "footer footer";
+    gap: 56px;
+  }
+}
+
+@media screen and (min-width: 68rem) {
+  .page {
+    grid-template-columns: 1fr 6fr;
+    grid-template-areas:
+      "header header"
+      "aside main"
+      "footer footer";
+  }
+}
+
+.page-header {
+  position: sticky;
+  top: 0;
+  mix-blend-mode: difference; /* Safari does not support `differences` */
+  mix-blend-mode: exclusion;
+  user-select: none;
+  grid-area: header;
+  font-size: var(--font-size-h2);
+  line-height: 1;
+}
+
+.page-header,
+.page-header a {
+  color: white;
+  text-decoration: none;
+}
+
+.page-main {
+  display: grid;
+  gap: 64px;
+  grid-area: main;
+}
+
+.page-header,
+.page-footer {
+  padding-block: 24px;
+}
+
+.page-aside {
+  grid-area: aside;
+}
+
+.page-aside nav {
+  display: grid;
+  gap: 0.25em;
+}
+
+.page-footer {
+  display: flex;
+  gap: 0.75em;
+  justify-content: end;
+  font-size: 0.75rem;
+  grid-area: footer;
+}
+
+.page-footer,
+.page-footer a {
+  color: var(--color-text-muted);
+}
+
+.page-main-content {
+  display: grid;
+  gap: 64px;
+}
+
+.page-header,
+.page-aside,
+.page-main-intro,
+.page-footer {
+  padding-inline: var(--page-spacing);
+}
+
+@media screen and (min-width: 50rem) {
+  .page-main-intro {
+    padding-inline: 0;
+  }
+}
+
+/*
+ * ================================
+ *     END Component: Page Layout
+ * ================================
+ */

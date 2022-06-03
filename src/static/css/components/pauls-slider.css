@@ -1,0 +1,80 @@
+/*
+ * =====================================
+ *     START Component: pauls-slider
+ * =====================================
+ */
+
+.pauls-slider {
+  --_scrollbar-thumb-color: transparent;
+}
+
+.pauls-slider__track {
+  --_spacing: var(--page-spacing);
+
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  align-items: flex-start;
+  gap: var(--_spacing);
+  padding-inline: var(--_spacing);
+}
+
+/* Note: Hacky McHack to get the correct spacing at the end of the `overflow: scroll` area */
+.pauls-slider__track::after {
+  content: "";
+  display: block;
+  padding: calc(var(--_spacing) / 2);
+  margin-inline-start: calc(-1 * var(--_spacing));
+}
+
+.pauls-slider__track > * {
+  scroll-snap-align: center;
+  width: clamp(
+    var(--image-min-size),
+    calc(100% - calc(var(--page-spacing) * 4)),
+    var(--image-max-size)
+  );
+  flex: 0 0 auto;
+}
+
+/* Works on Firefox */
+.pauls-slider__track {
+  scrollbar-width: thin;
+  scrollbar-color: var(--_scrollbar-thumb-color) transparent;
+}
+
+.pauls-slider:hover {
+  --_scrollbar-thumb-color: rgba(0, 0, 0, 0.25);
+}
+
+/* Works on Chrome, Edge, and Safari */
+.pauls-slider__track::-webkit-scrollbar {
+  height: 4px;
+}
+
+.pauls-slider__track::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.pauls-slider__track::-webkit-scrollbar-thumb {
+  background-color: var(--_scrollbar-thumb-color);
+  border-radius: 20px;
+  opacity: 0.5;
+}
+
+@media screen and (min-width: 50rem) {
+  .pauls-slider__track {
+    padding-inline-start: 0;
+  }
+
+  .pauls-slider__track > * {
+    scroll-snap-align: end;
+    scroll-margin-inline-end: var(--_spacing);
+  }
+}
+
+/*
+ * ===================================
+ *     END Component: pauls-slider
+ * ===================================
+ */

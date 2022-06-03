@@ -1,0 +1,10 @@
+{% macro framedImage (src, id) %}
+<figure data-component="pauls-framed-image" id="{{ id }}" class="frame">
+  <img
+    src="{{ ['/', src] | join() | url }}"
+    alt=""
+    loading="lazy"
+    decoding="async"
+  />
+</figure>
+{% endmacro %}

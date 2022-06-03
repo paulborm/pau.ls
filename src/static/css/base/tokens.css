@@ -1,0 +1,14 @@
+:root {
+  --color-text: hwb(60 9% 88%);
+  --color-text-muted: hwb(60 55% 41%);
+  --color-links: hwb(240 0% 0%);
+  --color-page-background: hwb(47 90% 7%);
+  --font-size-h1: clamp(2.125rem, 5vw, 4rem);
+  --font-size-h2: 1.25rem;
+
+  --page-spacing: 12px;
+
+  --image-min-size: 240px;
+  --image-max-size: 640px;
+  --image-gutter: 24px;
+}

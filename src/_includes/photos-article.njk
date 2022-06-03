@@ -1,0 +1,37 @@
+{% from 'photos-framed-image.njk' import framedImage %}
+{% from 'photos-image-slider.njk' import imageSlider %}
+
+{% macro article (date, items) %}
+
+{# START Variables #}
+{% set id = date | replace('-', '') %}
+{% set title = date | replace('-', '/') %}
+{% set images %}
+  {% for item in items %}
+      {{ framedImage(item, [id, loop.index] | join('-')) }}
+    {% endfor %}
+{% endset %}
+{# END Variables #}
+
+{# START Template #}
+<article class="article">
+  <header>
+    <h2 id="{{ id }}">
+      <time datetime="{{ date }}">{{ title}}</time>
+    </h2>
+  </header>
+  <main>
+
+  {% if items.length > 4 %}
+    {{ imageSlider(images) }}
+  {% else %}
+    <div class="grid">
+      {{ images | safe }}
+    </div>
+  {% endif %}
+
+  </main>
+</article>
+{# END Template #}
+
+{% endmacro %}

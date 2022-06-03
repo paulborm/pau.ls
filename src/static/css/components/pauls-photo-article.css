@@ -1,0 +1,50 @@
+/*
+ * ================================
+ *     START Component: Article
+ * ================================
+ */
+
+.article {
+  display: grid;
+  gap: 24px;
+}
+
+.article .grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(var(--image-min-size), var(--image-max-size))
+  );
+  gap: var(--image-gutter);
+}
+
+.article header,
+.article .grid {
+  padding-inline: var(--page-spacing);
+}
+
+.article header {
+  mix-blend-mode: difference; /* Safari does not support `differences` */
+  mix-blend-mode: exclusion;
+  position: sticky;
+  top: 24px;
+  text-align: end;
+  color: white;
+}
+
+@media screen and (min-width: 50rem) {
+  .article header {
+    text-align: start;
+  }
+
+  .article header,
+  .article .grid {
+    padding: 0;
+  }
+}
+
+/*
+ * ==============================
+ *     END Component: Article
+ * ==============================
+ */

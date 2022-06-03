@@ -1,0 +1,7 @@
+{% macro imageSlider (items) %}
+<div data-component="pauls-slider" class="pauls-slider">
+  <div data-id="pauls-slider-track" class="pauls-slider__track">
+    {{ items | safe }}
+  </div>
+</div>
+{% endmacro %}
