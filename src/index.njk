@@ -31,30 +31,18 @@ tags: ["nav"]
   img.removeAttribute("alt");
   caption.innerText = "";
 
-  /** @type {[string, TPicture[]][]} */
-  let imagesData;
-
   try {
-    const response = await fetch("/photos/data.json");
-    imagesData = await response.json();
+    const response = await fetch("{{- env.API_ORIGIN | safe -}}/api/v1/photos/random");
+    /** @type {[string, TPicture[]][]} */
+    const data = await response.json();
+
+    img.setAttribute("src", `/${data[1].url}`);
+    img.setAttribute("alt", data[1].alt);
+    caption.innerText = `Random picture taken on ${Intl.DateTimeFormat().format(
+      new Date(data[0])
+    )}`;
   } catch (error) {
     console.log("Oopsi", { error });
-  }
-
-  if (imagesData) {
-    const pick = imagesData[randomInt(0, imagesData.length - 1)];
-    const pickedTitle = pick[0];
-    const pickedImage = pick[1][randomInt(0, pick[1].length - 1)];
-
-    img.setAttribute("src", `/${pickedImage.url}`);
-    img.setAttribute("alt", pickedImage?.alt);
-    caption.innerText = `Random picture taken on ${Intl.DateTimeFormat().format(
-      new Date(pickedTitle)
-    )}`;
-  }
-
-  function randomInt(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
   /**
