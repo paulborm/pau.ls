@@ -14,6 +14,7 @@ tags: ["nav"]
   {% set caption = ["Random picture taken on", randomItemTitle].join(" ") %}
 
   <a href="/photos/" title="Go to see all photos" style="text-decoration: none">
+    {# Note: This gets replaced by cloudflare workers in the prod response  #}
     {{ framedImage (randomItemImage.url, caption=caption, class='', dataID='pauls-random-image') }}
   </a>
 </section>
