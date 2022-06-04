@@ -1,7 +1,7 @@
 module.exports = () => {
   return {
     url: "https://pau.ls",
-    title: "Everyday photos — Paul Borm",
+    title: "Pauls Raum für Fotografie und kreatives 🤡 | Paul Borm",
     nav: [
       {
         title: "Paul Borm",
@@ -9,8 +9,8 @@ module.exports = () => {
         isHome: true,
       },
       {
-        title: "photos",
-        href: "/photos/",
+        title: "fotos",
+        href: "/fotos/",
       },
     ],
     currentDate: () => {

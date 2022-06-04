@@ -7,14 +7,18 @@ tags: ["nav"]
 {% from 'photos-framed-image.njk' import framedImage %}
 
 <section class="page-main-content">
-
   {% set randomItem = photos | random %}
   {% set randomItemImage = randomItem[1] | random %}
   {% set randomItemTitle = randomItem[0] | formatLocaleDate %}
-  {% set caption = ["Random picture taken on", randomItemTitle].join(" ") %}
+  {% set caption = ["Zufälliges Foto aus dem Album, geknipst am", randomItemTitle].join(" ") %}
 
-  <a href="/photos/" title="Go to see all photos" style="text-decoration: none">
-    {# Note: This gets replaced by cloudflare workers in the prod response  #}
-    {{ framedImage (randomItemImage.url, caption=caption, class='', dataID='pauls-random-image') }}
-  </a>
+  {% for nav in site.nav %}
+      {% if nav.title === "fotos" %}
+        <a href="{{ nav.href }}" title="Alle Fotos ansehen" style="text-decoration: none">
+          {# Note: This gets replaced by cloudflare workers in the prod response  #}
+          {# Note: Caption text comes from cloudflare worker  #}
+          {{ framedImage (randomItemImage.url, caption=caption, dataID='pauls-random-image') }}
+        </a>
+      {% endif %}
+  {% endfor %}
 </section>
