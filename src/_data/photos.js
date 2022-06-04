@@ -28,7 +28,7 @@ const getAllFiles = function (dirPath, root, arrayOfFiles) {
       arrayOfFiles = getAllFiles(filePath, root, arrayOfFiles);
       map.set(file, arrayOfFiles);
     } else {
-      if ([".jpg", ".jpeg"].includes(path.extname(filePath))) {
+      if ([".jpg", ".jpeg"].includes(path.extname(filePath).toLowerCase())) {
         const metadata = {
           alt: "",
           caption: "",
