@@ -22,7 +22,6 @@
       "header header"
       "aside main"
       "footer footer";
-    gap: 56px;
   }
 }
 
@@ -71,6 +70,10 @@
 .page-footer,
 .page-footer a {
   color: var(--color-text-muted);
+}
+
+.page-footer a {
+  white-space: nowrap;
 }
 
 .page-main-content {
