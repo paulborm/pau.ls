@@ -41,11 +41,11 @@
   writing-mode: vertical-lr;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   [data-component="pauls-framed-image"] {
     --_image-frame-color: hwb(0 90% 10%);
   }
-}
+} */
 
 /*
  * ============================
