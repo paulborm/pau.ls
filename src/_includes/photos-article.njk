@@ -6,7 +6,7 @@
 {# START Variables #}
 {% set maxNumberImages = 4 %}
 {% set id = date | replace('-', '') %}
-{% set title = date | replace('-', '/') %}
+{% set title = date | formatDate %}
 {% set framedImagesHTML %}
   {% for image in images %}
       {{ framedImage(image.url, alt=image.alt, caption=image.caption, id=image.id) }}
@@ -18,7 +18,7 @@
 <article class="article">
   <header>
     <h2 id="{{ id }}">
-      <time datetime="{{ date }}">{{ title}}</time>
+      <time datetime="{{ date }}">{{ title }}</time>
     </h2>
   </header>
   <main class="{% if images.length <= maxNumberImages %}grid{% endif %}">

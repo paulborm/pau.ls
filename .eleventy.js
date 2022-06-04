@@ -20,6 +20,16 @@ module.exports = (eleventyConfig) => {
     return content;
   });
 
+  // Universal filters (Adds to Liquid, Nunjucks, and Handlebars)
+  // Example: Input should look this `2022-05-22`
+  eleventyConfig.addFilter("formatLocaleDate", function (value) {
+    return Intl.DateTimeFormat().format(new Date(value));
+  });
+  // Example: Input should look this `2022-05-22`
+  eleventyConfig.addFilter("formatDate", function (value) {
+    return value.replace(/-/g, "/");
+  });
+
   return {
     dir: {
       input: "src",

@@ -7,7 +7,61 @@ tags: ["nav"]
 {% from 'photos-framed-image.njk' import framedImage %}
 
 <section class="page-main-content">
-  <a href="/photos/#9b7f7f447e21984b6052035c4f7e8d84">
-  {{ framedImage ("static/photos/2022-06-03/480.jpg", caption='Random picture from 23/23/2222', class='inline') }}
+
+  {% set randomItem = photos | random %}
+  {% set randomItemImage = randomItem[1] | random %}
+  {% set randomItemTitle = randomItem[0] | formatLocaleDate %}
+  {% set caption = ["Random picture taken on", randomItemTitle].join(" ") %}
+
+  <a href="/photos/" title="Go to see all photos" style="text-decoration: none">
+    {{ framedImage (randomItemImage.url, caption=caption, class='') }}
   </a>
 </section>
+
+<script type="module">
+  "use strict";
+
+  const framedImage = document.querySelector(
+    '[data-component="pauls-framed-image"]'
+  );
+  const img = framedImage.querySelector("img");
+  const caption = framedImage.querySelector("figcaption");
+
+  img.removeAttribute("src");
+  img.removeAttribute("alt");
+  caption.innerText = "";
+
+  /** @type {[string, TPicture[]][]} */
+  let imagesData;
+
+  try {
+    const response = await fetch("/photos/data.json");
+    imagesData = await response.json();
+  } catch (error) {
+    console.log("Oopsi", { error });
+  }
+
+  if (imagesData) {
+    const pick = imagesData[randomInt(0, imagesData.length - 1)];
+    const pickedTitle = pick[0];
+    const pickedImage = pick[1][randomInt(0, pick[1].length - 1)];
+
+    img.setAttribute("src", `/${pickedImage.url}`);
+    img.setAttribute("alt", pickedImage?.alt);
+    caption.innerText = `Random picture taken on ${Intl.DateTimeFormat().format(
+      new Date(pickedTitle)
+    )}`;
+  }
+
+  function randomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  /**
+   * @typedef {Object} TPicture
+   * @property {string} id
+   * @property {string} url
+   * @property {string} [alt]
+   * @property {string} [caption]
+   */
+</script>
