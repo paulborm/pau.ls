@@ -22,11 +22,12 @@ module.exports = (eleventyConfig) => {
   // Universal filters (Adds to Liquid, Nunjucks, and Handlebars)
   // Example: Input should look this `2022-05-22`
   eleventyConfig.addFilter("formatLocaleDate", function (value) {
-    return Intl.DateTimeFormat().format(new Date(value));
-  });
-  // Example: Input should look this `2022-05-22`
-  eleventyConfig.addFilter("formatDate", function (value) {
-    return value.replace(/-/g, "/");
+    // Note: Randomly chose "es" as the locale as it supports `dd/mm/yyyy` LOL
+    return Intl.DateTimeFormat("es", {
+      month: "2-digit",
+      day: "2-digit",
+      year: "numeric",
+    }).format(new Date(value));
   });
 
   return {

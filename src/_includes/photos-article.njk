@@ -6,7 +6,7 @@
 {# START Variables #}
 {% set maxNumberImages = 4 %}
 {% set id = date | replace('-', '') %}
-{% set title = date | formatDate %}
+{% set title = date | formatLocaleDate %}
 {% set framedImagesHTML %}
   {% for image in images %}
       {{ framedImage(image.url, alt=image.alt, caption=image.caption, id=image.id) }}
