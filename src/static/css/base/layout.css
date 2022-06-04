@@ -41,7 +41,7 @@
   flex-direction: column;
   gap: 64px;
   grid-area: main;
-  padding-bottom: 48px;
+  padding-bottom: 24px;
   flex: 1 1 auto;
 }
 
