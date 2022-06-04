@@ -2,6 +2,11 @@
 permalink: /_redirects
 eleventyExcludeFromCollections: true
 ---
+/📸 /photos/ 301
+/%F0%9F%93%B8 /photos/ 301
+/🖼 /photos/ 301
+/%F0%9F%96%BC /photos/ 301
+
 {%- for page in collections.all -%}
   {% if page.data.redirect.url %}
     {{- page.url }} {{ page.data.redirect.url }} {{ page.data.redirect.code if page.data.redirect.code else "302" -}}
