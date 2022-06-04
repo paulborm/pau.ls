@@ -14,42 +14,6 @@ tags: ["nav"]
   {% set caption = ["Random picture taken on", randomItemTitle].join(" ") %}
 
   <a href="/photos/" title="Go to see all photos" style="text-decoration: none">
-    {{ framedImage (randomItemImage.url, caption=caption, class='') }}
+    {{ framedImage (randomItemImage.url, caption=caption, class='', dataID='pauls-random-image') }}
   </a>
 </section>
-
-<script type="module">
-  "use strict";
-
-  const framedImage = document.querySelector(
-    '[data-component="pauls-framed-image"]'
-  );
-  const img = framedImage.querySelector("img");
-  const caption = framedImage.querySelector("figcaption");
-
-  img.removeAttribute("src");
-  img.removeAttribute("alt");
-  caption.innerText = "";
-
-  try {
-    const response = await fetch("{{- env.API_ORIGIN | safe -}}/api/v1/photos/random");
-    /** @type {[string, TPicture[]][]} */
-    const data = await response.json();
-
-    img.setAttribute("src", `/${data[1].url}`);
-    img.setAttribute("alt", data[1].alt);
-    caption.innerText = `Random picture taken on ${Intl.DateTimeFormat().format(
-      new Date(data[0])
-    )}`;
-  } catch (error) {
-    console.log("Oopsi", { error });
-  }
-
-  /**
-   * @typedef {Object} TPicture
-   * @property {string} id
-   * @property {string} url
-   * @property {string} [alt]
-   * @property {string} [caption]
-   */
-</script>

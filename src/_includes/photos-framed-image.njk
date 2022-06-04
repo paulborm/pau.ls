@@ -1,5 +1,5 @@
-{% macro framedImage (src, alt='', caption='', id='', class='') %}
-<figure data-component="pauls-framed-image" class="frame {{ class }}">
+{% macro framedImage (src, alt='', caption='', id='', class='', dataID='') %}
+<figure data-component="pauls-framed-image" {% if dataID %}data-id="{{ dataID }}"{% endif %} class="frame {{ class }}">
   <img
     id="{{ id }}"
     src="{{ ['/', src] | join() | url }}"

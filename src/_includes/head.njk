@@ -26,7 +26,7 @@
     content="hwb(60 14% 84%)"
     media="(prefers-color-scheme: dark)"
   />
-  <title>{{ title }}</title>
+  <title>{{ title if title else site.title  }}</title>
 
   <link rel="stylesheet" href="/static/css/base/reset.css" />
   <link rel="stylesheet" href="/static/css/base/tokens.css" />
@@ -40,7 +40,6 @@
 
   {% if page.url === '/' %}
   <link rel="stylesheet" href="/static/css/pages/page-home.css" />
-  <link rel="preconnect" href="{{- env.API_ORIGIN | safe -}}">
   {% endif %}
 
   {% block head %} {% endblock %}
