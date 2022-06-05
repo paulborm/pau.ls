@@ -1,5 +1,6 @@
 require("dotenv").config();
 const htmlmin = require("html-minifier");
+const dayjs = require("dayjs");
 
 module.exports = (eleventyConfig) => {
   eleventyConfig.addPassthroughCopy("src/static/photos/**/*.(jpg|jpeg)");
@@ -22,12 +23,7 @@ module.exports = (eleventyConfig) => {
   // Universal filters (Adds to Liquid, Nunjucks, and Handlebars)
   // Example: Input should look this `2022-05-22`
   eleventyConfig.addFilter("formatLocaleDate", function (value) {
-    // Note: Randomly chose "es" as the locale as it supports `dd/mm/yyyy` LOL
-    return Intl.DateTimeFormat("es", {
-      month: "2-digit",
-      day: "2-digit",
-      year: "numeric",
-    }).format(new Date(value));
+    return dayjs(value).format("DD/MM/YYYY"); // display
   });
 
   return {
