@@ -31,7 +31,7 @@
   scroll-snap-align: center;
   width: clamp(
     var(--image-min-size),
-    calc(100% - calc(var(--page-spacing) * 4)),
+    calc(100% - calc(var(--_spacing) * 4)),
     var(--image-max-size)
   );
   flex: 0 0 auto;
@@ -65,11 +65,11 @@
 @media screen and (min-width: 50rem) {
   .pauls-slider__track {
     padding-inline-start: 0;
+    scroll-padding-inline-end: calc(var(--_spacing) * 2);
   }
 
   .pauls-slider__track > * {
     scroll-snap-align: end;
-    scroll-margin-inline-end: var(--_spacing);
   }
 }
 
