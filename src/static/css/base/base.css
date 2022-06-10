@@ -33,7 +33,7 @@ h1 {
   font-size: var(--font-size-h1);
   letter-spacing: 0.04em;
   font-weight: 600;
-  max-width: 32ch;
+  max-width: 28ch;
   line-height: 1.125;
   hyphens: auto;
 }
