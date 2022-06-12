@@ -10,9 +10,6 @@
   gap: 24px;
 }
 
-.article main {
-}
-
 .article main.grid {
   display: grid;
   grid-template-columns: repeat(
@@ -22,8 +19,7 @@
   gap: var(--image-gutter);
 }
 
-.article header,
-.article main:where(.grid) {
+.article header {
   padding-inline: var(--page-spacing);
 }
 
@@ -36,7 +32,7 @@
   color: white;
 }
 
-@media screen and (min-width: 50rem) {
+@media screen and (min-width: 68rem) {
   .article header {
     text-align: start;
   }

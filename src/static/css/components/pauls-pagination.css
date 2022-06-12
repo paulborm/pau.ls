@@ -12,7 +12,7 @@
   text-decoration: line-through;
 }
 
-@media screen and (min-width: 50rem) {
+@media screen and (min-width: 68rem) {
   [data-component="pauls-pagination"] :is(ol, ul) {
     padding-inline: 0;
   }

@@ -16,15 +16,6 @@
   scroll-snap-type: x mandatory;
   align-items: flex-start;
   gap: var(--_spacing);
-  padding-inline: var(--_spacing);
-}
-
-/* Note: Hacky McHack to get the correct spacing at the end of the `overflow: scroll` area */
-.pauls-slider__track::after {
-  content: "";
-  display: block;
-  padding: calc(var(--_spacing) / 2);
-  margin-inline-start: calc(-1 * var(--_spacing));
 }
 
 .pauls-slider__track > * {
@@ -62,12 +53,7 @@
   opacity: 0.5;
 }
 
-@media screen and (min-width: 50rem) {
-  .pauls-slider__track {
-    padding-inline-start: 0;
-    scroll-padding-inline-end: calc(var(--_spacing) * 2);
-  }
-
+@media screen and (min-width: 68rem) {
   .pauls-slider__track > * {
     scroll-snap-align: end;
   }

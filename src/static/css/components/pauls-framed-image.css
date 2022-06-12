@@ -6,6 +6,7 @@
 
 [data-component="pauls-framed-image"] {
   --_image-frame-color: hwb(0 100% 0%);
+  --border-width: max(3%, var(--page-spacing));
 }
 
 [data-component="pauls-framed-image"] img {
@@ -18,7 +19,7 @@
 }
 
 [data-component="pauls-framed-image"].frame img {
-  padding: 3%;
+  padding: var(--border-width);
 }
 
 [data-component="pauls-framed-image"] figcaption {

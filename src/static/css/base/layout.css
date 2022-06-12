@@ -12,21 +12,11 @@
   min-height: 100vh;
 }
 
-@media screen and (min-width: 50rem) {
+@media screen and (min-width: 68rem) {
   .page {
     display: grid;
     flex-direction: initial;
     grid-template-rows: auto 1fr auto;
-    grid-template-columns: 1fr 4fr;
-    grid-template-areas:
-      "header header"
-      "aside main"
-      "footer footer";
-  }
-}
-
-@media screen and (min-width: 68rem) {
-  .page {
     grid-template-columns: 1fr 6fr;
     grid-template-areas:
       "header header"
@@ -89,7 +79,7 @@
   padding-inline: var(--page-spacing);
 }
 
-@media screen and (min-width: 50rem) {
+@media screen and (min-width: 68rem) {
   .page-main-intro {
     padding-inline: 0;
   }

@@ -13,7 +13,7 @@
   --image-gutter: 24px;
 }
 
-@media screen and (min-width: 50rem) {
+@media screen and (min-width: 68rem) {
   :root {
     --image-gutter: 24px;
     --page-spacing: 24px;
