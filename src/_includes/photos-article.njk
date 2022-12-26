@@ -7,6 +7,7 @@
 {% set maxNumberImages = 4 %}
 {% set id = date | replace('-', '') %}
 {% set title = date | formatLocaleDate %}
+{% set showGrid = (images.length % 2) === 0 and images.length <= maxNumberImages %}
 {% set framedImagesHTML %}
   {% for image in images %}
       {{ framedImage(image.url, alt=image.alt, caption=image.caption, id=image.id) }}
@@ -21,12 +22,12 @@
       <time datetime="{{ date }}">{{ title }}</time>
     </h2>
   </header>
-  <main class="{% if images.length <= maxNumberImages %}grid{% endif %}">
+  <main class="{% if showGrid %}grid{% endif %}">
 
-  {% if images.length > maxNumberImages %}
-    {{ imageSlider(framedImagesHTML) }}
-  {% else %}
+  {% if showGrid %}
     {{ framedImagesHTML | safe }}
+  {% else %}
+    {{ imageSlider(framedImagesHTML) }}
   {% endif %}
 
   </main>
