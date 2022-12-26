@@ -3,6 +3,7 @@
   padding: 0;
   list-style: none;
   display: flex;
+  flex-wrap: wrap;
   gap: 1em;
   padding-inline: var(--page-spacing);
 }
