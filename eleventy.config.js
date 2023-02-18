@@ -5,7 +5,6 @@ const dayjs = require("dayjs");
 module.exports = (eleventyConfig) => {
   eleventyConfig.addPassthroughCopy("src/static/photos/**/*.(jpg|jpeg)");
   eleventyConfig.addPassthroughCopy("src/static/css");
-  eleventyConfig.addPassthroughCopy("src/static/icon");
   eleventyConfig.addPassthroughCopy({ "src/static/favicon": "/" });
 
   eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
