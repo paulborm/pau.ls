@@ -1,10 +1,14 @@
-@layers base, components, pages;
+@layer base, components, pages;
 
 @import url(base/reset.css) layer(base);
 @import url(base/tokens.css) layer(base);
 @import url(base/base.css) layer(base);
 @import url(base/layout.css) layer(base);
 
-@import url(components/pauls-photo-article.css) layer(components);
 @import url(components/pauls-framed-image.css) layer(components);
+@import url(components/pauls-pagination.css) layer(components);
+@import url(components/pauls-photo-article.css) layer(components);
+@import url(components/pauls-site-header.css) layer(components);
 @import url(components/pauls-slider.css) layer(components);
+
+@import url(pages/page-home.css) layer(pages);

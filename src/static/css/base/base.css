@@ -1,9 +1,3 @@
-/*
- * ==================
- *     START Base
- * ==================
- */
-
 html {
   color-scheme: light;
   scroll-padding-block: var(--page-spacing, 24px);
@@ -55,9 +49,3 @@ a[target="_blank"]::after {
     filter: invert();
   }
 }
-
-/*
- * ================
- *     END Base
- * ================
- */

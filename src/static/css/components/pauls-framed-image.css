@@ -1,9 +1,3 @@
-/*
- * ===========================================
- *     START Component: pauls-framed-image
- * ===========================================
- */
-
 [data-component="pauls-framed-image"] {
   --_image-frame-color: hwb(0 100% 0%);
   --border-width: max(3%, var(--page-spacing));
@@ -41,15 +35,3 @@
   padding-block-start: 8px;
   writing-mode: vertical-lr;
 }
-
-/* @media (prefers-color-scheme: dark) {
-  [data-component="pauls-framed-image"] {
-    --_image-frame-color: hwb(0 90% 10%);
-  }
-} */
-
-/*
- * ============================
- *     END Component: image
- * ============================
- */

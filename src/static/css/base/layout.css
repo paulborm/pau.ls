@@ -1,9 +1,3 @@
-/*
- * ====================================
- *     START Component: Page Layout
- * ====================================
- */
-
 .page {
   display: flex;
   flex-direction: column;
@@ -85,9 +79,3 @@
     padding-inline: 0;
   }
 }
-
-/*
- * ================================
- *     END Component: Page Layout
- * ================================
- */
