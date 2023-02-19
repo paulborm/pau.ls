@@ -2,7 +2,32 @@ require("dotenv").config();
 const htmlmin = require("html-minifier");
 const dayjs = require("dayjs");
 
-module.exports = (eleventyConfig) => {
+/** @type {import('@11ty/eleventy').UserConfig} */
+const config = (eleventyConfig) => {
+  // eleventyConfig.addPlugin(EleventyVitePlugin, {
+  //   /** @type {import('vite').UserConfig} */
+  //   viteOptions: {
+  //     appType: "mpa",
+  //     build: {
+  //       assetsInclude: ["**/*.json"],
+  //       assetsInlineLimit: 0,
+  //       rollupOptions: {
+  //         output: {
+  //           assetFileNames: (assetInfo) => {
+  //             const fileExtName = assetInfo.name.split(".").at(-1);
+
+  //             if (["css", "js", "png"].includes(fileExtName)) {
+  //               return "assets/[name]-[hash][extname]";
+  //             }
+
+  //             return "assets/[name][extname]";
+  //           },
+  //         },
+  //       },
+  //     },
+  //   },
+  // });
+
   eleventyConfig.addPassthroughCopy("src/static/photos/**/*.(jpg|jpeg)");
   eleventyConfig.addPassthroughCopy("src/static/css");
   eleventyConfig.addPassthroughCopy({ "src/static/favicon": "/" });
@@ -31,3 +56,5 @@ module.exports = (eleventyConfig) => {
     },
   };
 };
+
+module.exports = config;
