@@ -1,9 +1,7 @@
 <header data-component="pauls-site-header" data-id="page-header" class="page-header">
   <nav>
     {%- for item in site.nav -%}
-      {% set currentPage = item.href in page.url %}
-
-      {% if currentPage == false or item.isHome %}
+      {% set currentPage = item.href == page.url %}
       <a
         {% if currentPage %}
         aria-current="page"
@@ -13,7 +11,6 @@
       >
         {{- item.title -}}
       </a>
-      {% endif %}
     {%- endfor -%}
   </nav>
 </header>
