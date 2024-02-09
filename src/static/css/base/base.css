@@ -16,6 +16,7 @@ a {
 h1,
 h2 {
   line-height: 1;
+  text-wrap: balance;
 }
 
 h2 {
@@ -29,7 +30,6 @@ h1 {
   font-weight: 600;
   max-width: 28ch;
   line-height: 1.125;
-  hyphens: auto;
 }
 
 a[target="_blank"]::after {
