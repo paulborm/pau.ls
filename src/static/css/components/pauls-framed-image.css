@@ -21,7 +21,7 @@
   font-family: Georgia, "Times New Roman", Times, serif;
   font-style: italic;
   text-align: center;
-  color: var(--color-text-muted);
+  color: var(--color-text);
 }
 
 [data-component="pauls-framed-image"].inline {

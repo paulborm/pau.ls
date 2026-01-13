@@ -9,7 +9,7 @@
 }
 
 [data-component="pauls-pagination"] [aria-current="page"] {
-  color: white;
+  color: var(--color-text-muted);
   text-decoration: line-through;
 }
 

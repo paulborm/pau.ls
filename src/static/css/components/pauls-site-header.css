@@ -1,5 +1,6 @@
 [data-component="pauls-site-header"] {
   position: sticky;
+  z-index: 100;
   top: 0;
   mix-blend-mode: difference; /* Safari does not support `differences` */
   mix-blend-mode: exclusion;
@@ -24,4 +25,5 @@
 
 [data-component="pauls-site-header"] a:not(.logo)[aria-current="page"] {
   text-decoration: line-through;
+  display: none;
 }

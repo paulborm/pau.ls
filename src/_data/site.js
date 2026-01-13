@@ -1,7 +1,7 @@
 module.exports = () => {
   return {
     url: "https://pau.ls",
-    title: "Pauls Raum für Fotografie und kreatives 🤡 | Paul Borm",
+    title: "Aus der Zeit gestohlene Erinnerungen und Geschichten | Paul Borm",
     nav: [
       {
         title: "Paul Borm",
